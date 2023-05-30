@@ -6,37 +6,33 @@
 //
 
 import SwiftUI
+import MapKit
+
+struct PinItem : Identifiable {
+    
+    let id = UUID()
+    let coordinate: CLLocationCoordinate2D
+    
+}
 
 struct ContentView: View {
+
+    @State var region = MKCoordinateRegion(center: .init(latitude: 40.428170, longitude: 71.684747), latitudinalMeters: 300, longitudinalMeters: 300)
+    @State var pin = PinItem(coordinate: .init(latitude: 40.428170, longitude: 71.684747))
+    
     var body: some View {
-        
-        
-        NavigationView {
-            Text("Akramjon Muhammadov")
-                .toolbar {
-                    ToolbarItem(placement: .principal){
-                        Text("Home")
-                    }
-                    ToolbarItem(placement: .navigationBarTrailing){
-                        
-                        Button(action: {
-                            
-                        }){
-                            Image(systemName: "apple.logo")
-                        }
-                    }
-                    ToolbarItem(placement: .navigationBarLeading){
-                        Button(action: {
-                            
-                        }){
-                            Image(systemName: "line.3.horizontal")
-                                .foregroundColor(.black)
-                        }
-                    }
-                }
-            
-        }
-        
+      
+         Map(
+         
+            coordinateRegion: $region,
+            showsUserLocation: true,
+            userTrackingMode: nil,
+            annotationItems: [pin]
+         ){ item in
+             
+             MapMarker(coordinate: item.coordinate)
+             
+         }
     }
 }
 struct ContentView_Previews: PreviewProvider {
@@ -44,3 +40,5 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+// 40.428170,71.684747)
