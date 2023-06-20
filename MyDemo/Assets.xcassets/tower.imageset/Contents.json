@@ -1,11 +1,11 @@
 {
   "images" : [
     {
+      "filename" : "tower.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "redd-f-7Z_tDyewxtQ-unsplash.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },
