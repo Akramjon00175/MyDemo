@@ -1,9 +1,3 @@
-//
-//  Lottie_Page.swift
-//  MyDemo
-//
-//  Created by Akramjon on 20/06/23.
-//
 
 import SwiftUI
 
