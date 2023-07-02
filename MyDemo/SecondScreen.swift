@@ -10,7 +10,7 @@ import SwiftUI
 struct SecondScreen: View {
     
     @Environment(\.presentationMode) var presentationMode
-    
+   
     var data = ""
     var delegate : BindingDelegate?
     
