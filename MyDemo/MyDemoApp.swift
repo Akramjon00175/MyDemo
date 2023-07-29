@@ -11,7 +11,7 @@ import SwiftUI
 struct MyDemoApp: App {
     var body: some Scene {
         WindowGroup {
-            SignIn()
+            SSOO().environmentObject(Status())
         }
     }
 }

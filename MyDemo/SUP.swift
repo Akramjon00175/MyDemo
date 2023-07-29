@@ -1,5 +1,5 @@
 //
-//  SignUp.swift
+//  SUP.swift
 //  MyDemo
 //
 //  Created by Akramjon on 02/07/23.
@@ -7,11 +7,8 @@
 
 import SwiftUI
 
-struct SignUp: View {
+struct SUP: View {
     
-    @Environment(\.presentationMode) var presentationMode
-   
-    @State var isShow = false
     @State var firstName = ""
     @State var lastName = ""
     @State var email = ""
@@ -19,15 +16,15 @@ struct SignUp: View {
     @State var password = ""
     
     var body: some View {
-        
+    
         VStack {
-            
+         
             Spacer()
             
-            TFB(title: "FirstName",text: firstName)
-            TFB(title: "LastName",text: lastName)
-            TFB(title: "Email",text: email)
-            TFB(title: "Adress",text: adress)
+            TF(title: "FirstName",text: firstName)
+            TF(title: "LastName",text: lastName)
+            TF(title: "Email",text: email)
+            TF(title: "Adress",text: adress)
             
             SecureField("Password",text: $password)
                 .padding()
@@ -56,8 +53,7 @@ struct SignUp: View {
                 Text("Already have an accoount ?")
                    
                 Button(action: {
-                   
-                    presentationMode.wrappedValue.dismiss()
+                   //
                 }){
                     Text("Sign In")
                         .font(.system(size: 18))
@@ -67,27 +63,29 @@ struct SignUp: View {
                 
             }
             
+            
+            
         }.padding()
-        
     }
 }
 
-struct SignUp_Previews: PreviewProvider {
+struct SUP_Previews: PreviewProvider {
     static var previews: some View {
-        SignUp()
+        SUP()
     }
 }
 
-struct TFB: View {
+struct TF : View {
     
     @State var title = ""
-    @State var text  = ""
+    @State var text = ""
     
     var body: some View {
         
-        VStack {
+        VStack{
             
-            TextField(title,text: $text)
+          TextField(title, text: $text)
+            
                 .padding()
                 .background(Color.gray.opacity(0.4))
                 .cornerRadius(20)
